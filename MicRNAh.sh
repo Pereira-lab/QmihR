@@ -30,16 +30,16 @@
 # Please Modify according to your location - By default it uses the Software folder
 # on the default location of this file. Please change the MY_PATH.
 
-MY_PATH="${PWD}"
+MY_PATH="${PWD}/"
 
-SAMTOOLS=${MY_PATH}/Software/samtools-1.3.1/samtools
-PAIR_END_SYNC=${MY_PATH}/Software/PairEndSync/pairsync
-PIGZ=${MY_PATH}/Software/pigz-2.3.4/pigz
-TRIMMOMATIC=${MY_PATH}/Software/Trimmomatic-0.36/
-BOWTIE2=${MY_PATH}/Software/bowtie2-2.2.7/
-RSEM=${MY_PATH}/Software/RSEM-1.2.29/
-R_ABUNDANCE=${MY_PATH}/Software/calculateRelativeAbundance
-BLASTN=${MY_PATH}/blastn
+SAMTOOLS=${MY_PATH}Software/samtools-1.3.1/samtools
+PAIR_END_SYNC=${MY_PATH}Software/PairEndSync/pairsync
+PIGZ=${MY_PATH}Software/pigz-2.3.4/pigz
+TRIMMOMATIC=${MY_PATH}Software/Trimmomatic-0.36/
+BOWTIE2=${MY_PATH}Software/bowtie2-2.2.7/
+RSEM=${MY_PATH}Software/RSEM-1.2.29/
+R_ABUNDANCE=${MY_PATH}Software/calculateRelativeAbundance
+BLASTN=${MY_PATH}blastn
 
 # *********************************************************************************
 
@@ -62,7 +62,7 @@ BAMFILE=""
 OUTPUT=""
 REFERENCE=""
 SET_ID=""
-BLAST_DB="${MY_PATH}/BlastDB/"
+BLAST_DB="${MY_PATH}BlastDB/"
 THREADS=1
 
 while true; do
@@ -87,7 +87,7 @@ while true; do
 
 	-b|--blast)
 	    case "$2" in
-		"") BLAST_DB="${MY_PATH}/BlastDB/" ; shift 2 ;;
+		"") BLAST_DB="${MY_PATH}BlastDB/" ; shift 2 ;;
 		*)  BLAST_DB="$2" ; shift 2 ;;
 	    esac ;;
 	
@@ -119,12 +119,12 @@ done
 # *********************************************************************************
 # Sanitize input variables
 
-if [ -z $BAMFILE ] || [ $BAMFILE != *.bam ] || [ ! -f ${PWD}/$BAMFILE ] ; then
+if [ -z $BAMFILE ] || [ $BAMFILE != *.bam ] || [ ! -f ${MY_PATH}${BAMFILE} ] ; then
     echo "ERROR: You need to specify a valid input file in bam format"
     exit 1;
 fi
 
-if [ -z $REFERENCE ] || [ ! -f ${REFERENCE}.ti ] ; then
+if [ -z ${MY_PATH}$REFERENCE ] || [ ! -f ${MY_PATH}${REFERENCE}.ti ] ; then
     echo "ERROR: You need to specify a valid reference"
     exit 1;
 fi
@@ -134,7 +134,7 @@ if [ -z $BLAST_DB ] || [ ! -d $BLAST_DB ] || [ -z `find $BLAST_DB | grep nt.[0-9
     exit 1;
 fi
 
-if [ -z $SET_ID ] || [ ! -f $SET_ID ] ; then
+if [ -z ${MY_PATH}$SET_ID ] || [ ! -f ${MY_PATH}$SET_ID ] ; then
     echo "ERROR: You need to specify a valid setId"
     exit 1;
 fi
@@ -169,7 +169,7 @@ cd $OUTPUT
 
 echo "Extracting unmapped reads from bam.."
 #extract unmapped reads from bam file
-$SAMTOOLS fastq -f 4 ${PWD}/$BAMFILE -1 ${OUTPUT}_1.fastq -2 ${OUTPUT}_2.fastq
+$SAMTOOLS fastq -f 4 ${MY_PATH}$BAMFILE -1 ${OUTPUT}_1.fastq -2 ${OUTPUT}_2.fastq
 
 echo "Synchronize paired reads.."
 #Synchronize paired reads
@@ -197,7 +197,7 @@ ${RSEM}/rsem-calculate-expression -p $THREADS --paired-end \
      --estimate-rspd \
      --append-names \
      <(zcat ${OUTPUT}_1_paired.fq.gz) <(zcat ${OUTPUT}_2_paired.fq.gz) \
-     $REFERENCE \
+     ${MY_PATH}${REFERENCE} \
      ${OUTPUT}
 
 echo "Normalizing ..."
