@@ -58,13 +58,13 @@ be passed to the reference flag in MicRNAh.
 
 IV. Input files
 
-	> ./MicRNAh -i <input bam file> -r <Reference_filename> -b <blast_db> -s <set_id> -p <threads> -o <output>"
+	> ./MicRNAh -i <input bam file> -r <Reference_filename> -b <blast_db> -s <set_id> -p <threads> -o <output>
 	Options:
         	 -i, --input=<Input_bam>                 Input bam file
-         	-r, --reference=<Reference_filename>    Reference filename
-         	-b, --blast=<blast_db>                  Blast database folder. Default: BlastDb
-         	-s, --setid=<set_id>                    File with bacterial name and corresponding ids
-         	-o, --output=<Output_Name>              Output name
+         	 -r, --reference=<Reference_filename>    Reference filename
+         	 -b, --blast=<blast_db>                  Blast database folder. Default: BlastDb
+         	 -s, --setid=<set_id>                    File with bacterial name and corresponding ids
+         	 -o, --output=<Output_Name>              Output name
         	 -p, --threads=NUM                       Number of threads. Default: 1
 
 V. Helper scripts
