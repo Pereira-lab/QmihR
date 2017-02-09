@@ -39,7 +39,7 @@ TRIMMOMATIC=${MY_PATH}Software/Trimmomatic-0.36/
 BOWTIE2=${MY_PATH}Software/bowtie2-2.2.7/
 RSEM=${MY_PATH}Software/RSEM-1.2.29/
 R_ABUNDANCE=${MY_PATH}Software/calculateRelativeAbundance
-BLASTN=${MY_PATH}blastn
+BLASTN=${MY_PATH}Software/blastn
 
 # *********************************************************************************
 
