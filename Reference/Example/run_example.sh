@@ -42,6 +42,10 @@ do
 done < tmp.txt > test_db.fna
 
 grep -f tmp.txt test_db_simple.gff > test_db.gff
+awk '{gsub(/Parent=/,"Parent="$1"_"); print }' test_db.gff > tmp.gff
+awk '{gsub(/ID=/,"ID="$1"_"); print }' tmp.gff > test_db.gff
+
+rm tmp.gff
 
 #Generate set id file
 cat test_db_simple.fna | grep ">" | grep -v "plasmid" | cut -f 2-3 -d " " | sort -u > IDS.txt
