@@ -1,4 +1,4 @@
-MicRNAh: pipeline for microbiome characterization from human-centered RNA-seq datasets ****
+MicRNAh: pipeline for microbiome characterization from human-centered RNA-seq datasets
 
 README
 
