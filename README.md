@@ -4,7 +4,7 @@ README
 
 I. Dependencies
 
-MicRNAh make use of several software packages that require some packages to be installed. Please 
+QmihR make use of several software packages that require some packages to be installed. Please 
 during installation of the software in the Software folder, pay attention to potential errors. In
 the BlastDB, the perl script to update the blast library required perldoc to be installed. In
 Ubuntu this can be achieved by executing the following command:
@@ -13,7 +13,7 @@ Ubuntu this can be achieved by executing the following command:
 
 II. Compiling and Installing packages:
 
-MicRNAh Software folder already provides a build.sh script that decompresses and installs
+QmihR Software folder already provides a build.sh script that decompresses and installs
 all packages. This installation can be performed using:
 
 	> bash build.sh
@@ -54,7 +54,7 @@ To generate the database please execute:
 				 --bowtie2 --bowtie2-path Software/bowtie2-2.2.7/
 
 In this case bacterial_reference_ref is the name of the reference database and is the name that should
-be passed to the reference flag in MicRNAh.
+be passed to the reference flag in QmihR.
 
 IV. Input files
 
