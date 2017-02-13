@@ -210,7 +210,7 @@ $SAMTOOLS fasta -f 4 ${OUTPUT}.transcript.bam > ${OUTPUT}_databaseUnmapped.fa
 echo "Running blast on unmapped reads"
 #Run blast with percentage of identity above 97%
 $BLASTN -query ${OUTPUT}_databaseUnmapped.fa \
-	-db `find $BLAST_DB | grep nt.[0-9] | cut -f 1-2 -d "." | sort -u | tr "\n" " "` \
+	-db `find ${MY_PATH}$BLAST_DB | grep nt.[0-9] | cut -f 1-2 -d "." | sort -u | tr "\n" " "` \
 	-evalue 1e-20 -num_threads $THREADS -out ${OUTPUT}_blast.out -perc_identity 97 \
 	-outfmt "6 qseqid sseqid pident qlen length mismatch gapope evalue bitscore sscinames scomnames" 
 
