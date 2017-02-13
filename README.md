@@ -1,4 +1,4 @@
-MicRNAh: pipeline for microbiome characterization from human-centered RNA-seq datasets
+QmihR: pipeline for quantification of microbiome in human RNA-seq
 
 README
 
