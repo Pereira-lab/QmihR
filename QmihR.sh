@@ -201,7 +201,7 @@ ${RSEM}/rsem-calculate-expression -p $THREADS --paired-end \
      ${OUTPUT}
 
 echo "Normalizing ..."
-$R_ABUNDANCE ${OUTPUT}.rsem.results $SET_ID > ${OUTPUT}.rsem.results.normalized
+$R_ABUNDANCE ${OUTPUT}.rsem.results ${MY_PATH}$SET_ID > ${OUTPUT}.rsem.results.normalized
 
 echo "Extracting unmapped reads to database"
 #Extract unmapped reads
