@@ -80,6 +80,6 @@ VI. Example data for reproducing the results in the paper
 An example of how to create the reference database is present in the Example folder. This folder contains the sequence
 in fasta and gff of Helicobacter pylori and Clostridium citronae. Please read the script for explanation of the steps.
 
-VI. Citing MicRNAh
+VI. Citing QmihR
 
 Nothing yet. Hopefully this section will be updated
