@@ -7,6 +7,7 @@ cd ..
 
 unzip Trimmomatic-0.36.zip
 
+wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.7/bowtie2-2.2.7-linux-x86_64.zip/download -O bowtie2-2.2.7-linux-x86_64.zip
 unzip bowtie2-2.2.7-linux-x86_64.zip
 
 tar xzvf PairEndSync.tar.gz
