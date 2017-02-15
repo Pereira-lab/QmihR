@@ -45,7 +45,7 @@ BLASTN=${MY_PATH}Software/blastn
 
 # Print options
 function help_options {
-    echo "MicRNAh: pipeline for microbiome characterization from human-centered RNA-seq datasets"
+    echo "QmihR: pipeline for quantification of microbiome in human RNA-seq"
     echo "Usage: $0 -i <input bam file> -r <Reference_filename> -b <blast_db> -s <set_id> -p <threads> -o <output>"
     echo "Options:"
     echo "         -i, --input=<Input_bam>                 Input bam file"
